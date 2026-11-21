@@ -305,6 +305,7 @@ export function buildLevel(scene, world, R) {
     truckZone,
     playerSpawn: [0, 0.01, 10.6],
     door: { body: doorBody, mesh: doorMesh, step: stepDoor, reset: resetDoor },
+    moon: moonLight,
     update,
   };
 }

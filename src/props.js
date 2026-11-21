@@ -184,6 +184,7 @@ function colliderVolume(c) {
   return (4 / 3) * Math.PI * c.d ** 3;
 }
 
+const HIT_RED = new THREE.Color('#ff2a1a');
 const tmpQ = new THREE.Quaternion();
 const tmpE = new THREE.Euler();
 
@@ -414,7 +415,7 @@ export class PropManager {
       if (p.flash <= 0 || p.dead) continue;
       p.flash = Math.max(0, p.flash - dt * 4);
       for (const m of p.materials) {
-        m.emissive.copy(m.userData.baseEmissive).lerp(new THREE.Color('#ff2a1a'), p.flash);
+        m.emissive.copy(m.userData.baseEmissive).lerp(HIT_RED, p.flash);
         m.emissiveIntensity = Math.max(m.userData.baseIntensity, p.flash * 1.5);
       }
     }

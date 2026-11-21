@@ -23,6 +23,8 @@ export class Hud {
   }
 
   setLoaded(v, quota) {
+    if (v === this.lastLoaded) return;
+    this.lastLoaded = v;
     this.el.loaded.textContent = money(v);
     this.el.quota.textContent = money(quota);
     const f = Math.min(1, v / quota);
@@ -32,6 +34,8 @@ export class Hud {
 
   setTimer(sec) {
     const s = Math.max(0, Math.ceil(sec));
+    if (s === this.lastSec) return;
+    this.lastSec = s;
     this.el.timer.textContent = `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
     this.el.timer.classList.toggle('urgent', s <= 30);
   }
@@ -118,6 +122,7 @@ export class Hud {
   }
 
   clearTransient() {
+    this.lastLoaded = this.lastSec = undefined;
     for (const p of this.popups) p.el.remove();
     this.popups = [];
     this.el.toasts.innerHTML = '';

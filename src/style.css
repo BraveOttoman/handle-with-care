@@ -23,7 +23,15 @@ html, body {
 
 #game { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
 
-.hidden { display: none !important; }
+.hidden, [hidden] { display: none !important; }
+
+#perf {
+  position: fixed; left: 16px; bottom: 16px; z-index: 5; pointer-events: none;
+  padding: 6px 10px; border-radius: 6px; background: var(--panel);
+  font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre; color: var(--good);
+}
+#perf.bad { color: var(--warn); }
 
 /* ---------- HUD ---------- */
 #hud { position: fixed; inset: 0; pointer-events: none; }
@@ -176,6 +184,21 @@ kbd {
   animation: stamp 0.35s cubic-bezier(.2,1.6,.4,1) both 0.2s;
 }
 .rating-stamp.good { color: var(--good); border-color: var(--good); }
+
+.gfx { display: grid; gap: 8px; justify-items: center; }
+.seg { display: inline-flex; border: 2px solid var(--cardboard-dark); border-radius: 10px; overflow: hidden; }
+.seg button {
+  font: 600 14px 'Rubik', system-ui, sans-serif; color: var(--cream);
+  background: transparent; border: 0; padding: 8px 14px; cursor: pointer;
+}
+.seg button + button { border-left: 1px solid var(--cardboard-dark); }
+.seg button[aria-pressed="true"] { background: var(--cardboard); color: var(--ink); }
+.seg button:focus-visible, .btn:focus-visible { outline: 3px solid var(--warn); outline-offset: 2px; }
+.gfx-meta { font-size: 12px; opacity: 0.7; line-height: 1.6; }
+.gpu-warn {
+  margin: 0; max-width: 460px; padding: 10px 14px; border-radius: 8px;
+  background: rgba(216, 57, 47, 0.18); border: 1px solid var(--fragile); font-size: 14px; line-height: 1.45;
+}
 
 @keyframes pulse { from { opacity: 1; } to { opacity: 0.45; } }
 @keyframes toast-in { from { transform: translateX(30px); opacity: 0; } }

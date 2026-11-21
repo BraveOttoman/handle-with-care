@@ -9,6 +9,7 @@ import { Player, lookDir } from './player.js';
 import { Glove } from './glove.js';
 import { Hud, money } from './hud.js';
 import { initAudio, sfx } from './audio.js';
+import { Perf, isSoftwareGpu } from './perf.js';
 
 const DT = 1 / 60;
 const SHIFT_SECONDS = 6 * 60;
@@ -35,7 +36,6 @@ const R = RAPIER;
 // ---------- renderer / scene ----------
 const canvas = $('game');
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.setSize(innerWidth, innerHeight);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFShadowMap;
@@ -82,6 +82,25 @@ grabbables.set(level.door.body.handle, {
   prop: null,
   colliderHandles: new Set([level.door.body.collider(0).handle]),
 });
+
+const perf = new Perf(renderer, { flashlight, moon: level.moon });
+// The moon never moves and barely reaches indoors: refresh its shadow ~10x a second, not every frame.
+level.moon.shadow.autoUpdate = false;
+let frameCount = 0;
+const gfxButtons = [...document.querySelectorAll('#gfx button')];
+function showGraphics() {
+  for (const b of gfxButtons) b.setAttribute('aria-pressed', String(b.dataset.q === perf.choice));
+  $('gfx-now').textContent = `Now: ${perf.label} · ${perf.scale.toFixed(2)}x resolution`;
+}
+perf.onChange = showGraphics;
+for (const b of gfxButtons) b.onclick = () => perf.set(b.dataset.q);
+$('gpu-line').textContent = `Drawing with: ${perf.gpu.short}`;
+if (isSoftwareGpu(perf.gpu.raw)) {
+  const w = $('gpu-warn');
+  w.textContent = 'Your browser is drawing without the graphics card (hardware acceleration is off), so the game will be slow. Turn on "Use graphics acceleration" in the browser settings and restart it.';
+  w.hidden = false;
+}
+showGraphics();
 
 const player = new Player(world, R);
 props.playerCollider = player.collider.handle;
@@ -302,6 +321,7 @@ function updateHud(alpha) {
 
 function frame(now) {
   requestAnimationFrame(frame);
+  perf.frame(now - last, state === 'playing', now);
   const frameDt = Math.min(0.1, (now - last) / 1000);
   last = now;
   time += frameDt;
@@ -313,6 +333,7 @@ function frame(now) {
     updateHud(alpha);
   }
 
+  if (frameCount++ % 6 === 0) level.moon.shadow.needsUpdate = true;
   player.renderEye(alpha, camEye);
   camera.position.copy(camEye);
   camera.rotation.set(input.pitch, input.yaw, 0);
@@ -321,6 +342,7 @@ function frame(now) {
   glove.render(time);
   hud.update(frameDt);
   renderer.render(scene, camera);
+  perf.afterRender();
 }
 
 resetShift();
@@ -329,4 +351,4 @@ showScreen('title');
 requestAnimationFrame(frame);
 
 // handy for poking at things from the devtools console
-window.hwc = { world, props, player, glove, shift, level, scene, camera, renderer, input };
+window.hwc = { world, props, player, glove, shift, level, scene, camera, renderer, input, perf };

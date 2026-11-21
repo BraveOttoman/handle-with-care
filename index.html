@@ -57,11 +57,22 @@
           <div><kbd>RMB</kbd> throw (bad idea) · <kbd>F</kbd> in the truck: end shift</div>
         </div>
         <button class="btn" id="btn-start">Clock in</button>
+        <p class="gpu-warn" id="gpu-warn" hidden></p>
       </section>
 
       <section class="screen hidden" id="screen-pause">
         <h2>On break</h2>
         <p class="brief">The ghosts are judging you, but the timer has stopped.</p>
+        <div class="gfx">
+          <span class="label" id="gfx-label">Graphics</span>
+          <div class="seg" role="group" aria-labelledby="gfx-label" id="gfx">
+            <button type="button" data-q="auto">Auto</button>
+            <button type="button" data-q="high">High</button>
+            <button type="button" data-q="medium">Medium</button>
+            <button type="button" data-q="low">Low</button>
+          </div>
+          <div class="gfx-meta"><span id="gfx-now"></span><br /><span id="gpu-line"></span> · <kbd>F3</kbd> shows fps</div>
+        </div>
         <button class="btn" id="btn-resume">Back to work</button>
         <button class="btn btn-ghost" id="btn-restart-pause">Restart shift</button>
       </section>
