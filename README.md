@@ -4,6 +4,8 @@ A silly physics moving game. You're an underpaid mover clearing out a haunted
 mansion at night. Grab the valuables with your tractor glove, haul them into the
 truck, and hit the quota before the shift ends. Every bump knocks money off.
 
+**Play it:** https://braveottoman.github.io/handle-with-care/ (desktop, keyboard and mouse)
+
 ## Run it
 
 ```bash
@@ -14,6 +16,8 @@ npm run dev
 Open http://localhost:5173 and click **Clock in**.
 
 `npm run build` creates a static build in `dist/` that you can host anywhere.
+Every push to `main` or `initial-prototype` deploys to GitHub Pages through
+`.github/workflows/deploy.yml`.
 
 ## Controls
 
