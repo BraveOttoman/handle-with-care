@@ -65,6 +65,8 @@ addEventListener('resize', () => {
 });
 
 // ---------- world ----------
+// Let the display font load first so the truck and crate labels use it (give up after 1.5 s).
+await Promise.race([document.fonts?.ready, new Promise((r) => setTimeout(r, 1500))]);
 buildTextures();
 const world = new R.World({ x: 0, y: -9.81, z: 0 });
 world.timestep = DT;
