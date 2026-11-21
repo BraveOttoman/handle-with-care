@@ -101,7 +101,18 @@ function fixVertexColors(mesh) {
 const loader = new GLTFLoader();
 const texLoader = new THREE.TextureLoader();
 
-function loadGltf(file) {
+// Hosts that won't serve .glb can ship each model as base64 text instead (window.HWC_MODELS_AS_TEXT = true).
+async function loadGltf(file) {
+  if (window.HWC_MODELS_AS_TEXT) {
+    try {
+      const res = await fetch(BASE + file + '.b64.txt');
+      if (!res.ok) return null;
+      const bin = Uint8Array.from(atob((await res.text()).trim()), (c) => c.charCodeAt(0));
+      return await new Promise((resolve) => loader.parse(bin.buffer, '', resolve, () => resolve(null)));
+    } catch {
+      return null;
+    }
+  }
   return new Promise((resolve) => loader.load(BASE + file, resolve, undefined, () => resolve(null)));
 }
 function loadLightmap(file) {
