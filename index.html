@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Handle With Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="shift-card">
+        <div class="shift-row">
+          <span class="label">In truck</span>
+          <span class="timer" id="timer">6:00</span>
+        </div>
+        <div class="money"><span id="loaded">$0</span><span class="quota"> / <span id="quota">$0</span></span></div>
+        <div class="bar"><div class="bar-fill" id="quota-fill"></div></div>
+      </div>
+      <div id="toasts"></div>
+      <div id="popups"></div>
+      <div id="crosshair"></div>
+      <div id="tooltip" class="hidden">
+        <div class="tt-name" id="tt-name"></div>
+        <div class="tt-value" id="tt-value"></div>
+        <div class="tt-bar"><div class="tt-bar-fill" id="tt-fill"></div></div>
+      </div>
+      <div id="strain" class="hidden"><div id="strain-fill"></div></div>
+      <div id="hint"></div>
+    </div>
+
+    <div id="overlay">
+      <section class="screen" id="screen-loading">
+        <div class="stamp">LOADING THE TRUCK…</div>
+      </section>
+
+      <section class="screen hidden" id="screen-title">
+        <div class="box-label">
+          <div class="arrows">⬆ ⬆</div>
+          <h1>Handle<br />With Care</h1>
+          <div class="tagline">Moving Co. — <em>We break it, you bought it.</em></div>
+        </div>
+        <p class="brief">
+          The client wants their haunted mansion emptied <b>tonight</b>. Load
+          <b id="brief-quota">$20,000</b> of their stuff into the truck before the shift ends.
+          Every scratch comes off the value.
+        </p>
+        <div class="controls">
+          <div><kbd>WASD</kbd> move · <kbd>Shift</kbd> run · <kbd>Space</kbd> jump</div>
+          <div><kbd>Hold LMB</kbd> grab · <kbd>Scroll</kbd> reel in/out · <kbd>Q</kbd>/<kbd>E</kbd> twist</div>
+          <div><kbd>RMB</kbd> throw (bad idea) · <kbd>F</kbd> in the truck: end shift</div>
+        </div>
+        <button class="btn" id="btn-start">Clock in</button>
+      </section>
+
+      <section class="screen hidden" id="screen-pause">
+        <h2>On break</h2>
+        <p class="brief">The ghosts are judging you, but the timer has stopped.</p>
+        <button class="btn" id="btn-resume">Back to work</button>
+        <button class="btn btn-ghost" id="btn-restart-pause">Restart shift</button>
+      </section>
+
+      <section class="screen hidden" id="screen-results">
+        <h2>Shift report</h2>
+        <div class="report" id="report"></div>
+        <div class="rating-stamp" id="rating"></div>
+        <button class="btn" id="btn-restart">Another shift</button>
+      </section>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
