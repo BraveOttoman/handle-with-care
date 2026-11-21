@@ -43,8 +43,9 @@ export function isSoftwareGpu(name) {
 }
 
 export class Perf {
-  constructor(renderer, lights) {
+  constructor(renderer, lights, { moonShadows = true } = {}) {
     this.renderer = renderer;
+    this.moonShadows = moonShadows;
     this.lights = lights; // { flashlight, moon }
     this.choice = load(); // 'auto' | 'high' | 'medium' | 'low'
     this.tier = this.choice === 'auto' ? 'high' : this.choice;
@@ -81,13 +82,13 @@ export class Perf {
 
     const { flashlight, moon } = this.lights;
     flashlight.castShadow = p.flashShadow;
-    moon.castShadow = p.moonShadow > 0;
+    moon.castShadow = this.moonShadows && p.moonShadow > 0;
     if (p.moonShadow && moon.shadow.mapSize.x !== p.moonShadow) {
       moon.shadow.mapSize.set(p.moonShadow, p.moonShadow);
       moon.shadow.map?.dispose();
       moon.shadow.map = null;
     }
-    this.renderer.shadowMap.enabled = p.flashShadow || p.moonShadow > 0;
+    this.renderer.shadowMap.enabled = p.flashShadow || moon.castShadow;
     this.renderer.shadowMap.needsUpdate = true;
     this.onChange?.(this);
   }

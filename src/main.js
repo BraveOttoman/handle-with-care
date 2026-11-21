@@ -10,6 +10,7 @@ import { Glove } from './glove.js';
 import { Hud, money } from './hud.js';
 import { initAudio, sfx } from './audio.js';
 import { Perf, isSoftwareGpu } from './perf.js';
+import { loadAssets } from './assets.js';
 
 const DT = 1 / 60;
 const SHIFT_SECONDS = 6 * 60;
@@ -73,8 +74,22 @@ world.timestep = DT;
 const events = new R.EventQueue(true);
 
 const grabbables = new Map();
-const level = buildLevel(scene, world, R);
+const assets = await loadAssets();
+const level = buildLevel(scene, world, R, assets);
+
+// Reflections for metal and lacquer: one cube capture of the foyer, filtered for PBR.
+const pmrem = new THREE.PMREMGenerator(renderer);
+const envMap = pmrem.fromScene(scene, 0.03, 0.1, 60, { position: new THREE.Vector3(3, 1.7, 2.5), size: 256 }).texture;
+pmrem.dispose();
+scene.traverse((o) => {
+  if (o.isMesh && o.material?.isMeshStandardMaterial && !o.material.userData.baked) {
+    o.material.envMap = envMap;
+    o.material.envMapIntensity = 0.6;
+  }
+});
 const props = new PropManager(scene, world, R, grabbables);
+props.models = assets.props;
+props.envMap = envMap;
 const doorSync = props.addSynced(level.door.body, level.door.mesh);
 grabbables.set(level.door.body.handle, {
   body: level.door.body,
@@ -83,7 +98,7 @@ grabbables.set(level.door.body.handle, {
   colliderHandles: new Set([level.door.body.collider(0).handle]),
 });
 
-const perf = new Perf(renderer, { flashlight, moon: level.moon });
+const perf = new Perf(renderer, { flashlight, moon: level.moon }, { moonShadows: !level.baked });
 // The moon never moves and barely reaches indoors: refresh its shadow ~10x a second, not every frame.
 level.moon.shadow.autoUpdate = false;
 let frameCount = 0;
@@ -351,4 +366,4 @@ showScreen('title');
 requestAnimationFrame(frame);
 
 // handy for poking at things from the devtools console
-window.hwc = { world, props, player, glove, shift, level, scene, camera, renderer, input, perf };
+window.hwc = { world, props, player, glove, shift, level, scene, camera, renderer, input, perf, assets };

@@ -1,0 +1,1449 @@
+{
+ "H": 3.2,
+ "T": 0.25,
+ "DOOR_H": 2.4,
+ "BED_Y": 0.9,
+ "boxes": [
+  {
+   "p": [
+    0,
+    -0.1,
+    -2
+   ],
+   "s": [
+    24,
+    0.2,
+    20
+   ],
+   "mat": "floor",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    0,
+    -0.1,
+    24
+   ],
+   "s": [
+    60,
+    0.2,
+    32
+   ],
+   "mat": "grass",
+   "rotX": 0,
+   "collide": true,
+   "cast": false
+  },
+  {
+   "p": [
+    0,
+    0.005,
+    10
+   ],
+   "s": [
+    2.2,
+    0.01,
+    4
+   ],
+   "mat": "path",
+   "rotX": 0,
+   "collide": false,
+   "cast": false
+  },
+  {
+   "p": [
+    0,
+    3.3000000000000003,
+    -2
+   ],
+   "s": [
+    24.6,
+    0.2,
+    20.6
+   ],
+   "mat": "ceiling",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    -6,
+    0.006,
+    -6
+   ],
+   "s": [
+    6,
+    0.01,
+    4
+   ],
+   "mat": "rug-red",
+   "rotX": 0,
+   "collide": false,
+   "cast": false
+  },
+  {
+   "p": [
+    6,
+    0.006,
+    -6
+   ],
+   "s": [
+    4.5,
+    0.01,
+    3
+   ],
+   "mat": "rug-blue",
+   "rotX": 0,
+   "collide": false,
+   "cast": false
+  },
+  {
+   "p": [
+    0,
+    4.800000000000001,
+    3.4
+   ],
+   "s": [
+    25.5,
+    0.25,
+    7.4
+   ],
+   "mat": "roof",
+   "rotX": -0.42,
+   "collide": false,
+   "cast": true
+  },
+  {
+   "p": [
+    0,
+    4.800000000000001,
+    -7.4
+   ],
+   "s": [
+    25.5,
+    0.25,
+    7.4
+   ],
+   "mat": "roof",
+   "rotX": 0.42,
+   "collide": false,
+   "cast": true
+  },
+  {
+   "p": [
+    0,
+    1.6,
+    -12
+   ],
+   "s": [
+    24.25,
+    3.2,
+    0.25
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "outer",
+    "len": 24.25
+   }
+  },
+  {
+   "p": [
+    -12,
+    1.6,
+    -2
+   ],
+   "s": [
+    0.25,
+    3.2,
+    20
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "outer",
+    "len": 20
+   }
+  },
+  {
+   "p": [
+    12,
+    1.6,
+    -2
+   ],
+   "s": [
+    0.25,
+    3.2,
+    20
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "outer",
+    "len": 20
+   }
+  },
+  {
+   "p": [
+    -6.5625,
+    1.6,
+    7.9375
+   ],
+   "s": [
+    11.125,
+    3.2,
+    0.125
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "foyer",
+    "len": 11.125
+   }
+  },
+  {
+   "p": [
+    -6.5625,
+    1.6,
+    8.0625
+   ],
+   "s": [
+    11.125,
+    3.2,
+    0.125
+   ],
+   "mat": "siding",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    0,
+    2.8,
+    7.9375
+   ],
+   "s": [
+    2,
+    0.8000000000000003,
+    0.125
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "foyer",
+    "len": 2
+   }
+  },
+  {
+   "p": [
+    0,
+    2.8,
+    8.0625
+   ],
+   "s": [
+    2,
+    0.8000000000000003,
+    0.125
+   ],
+   "mat": "siding",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    6.5625,
+    1.6,
+    7.9375
+   ],
+   "s": [
+    11.125,
+    3.2,
+    0.125
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "foyer",
+    "len": 11.125
+   }
+  },
+  {
+   "p": [
+    6.5625,
+    1.6,
+    8.0625
+   ],
+   "s": [
+    11.125,
+    3.2,
+    0.125
+   ],
+   "mat": "siding",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    -8,
+    1.6,
+    0
+   ],
+   "s": [
+    8,
+    3.2,
+    0.25
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "foyer",
+    "len": 8
+   }
+  },
+  {
+   "p": [
+    -2.75,
+    2.8,
+    0
+   ],
+   "s": [
+    2.5,
+    0.8000000000000003,
+    0.25
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "foyer",
+    "len": 2.5
+   }
+  },
+  {
+   "p": [
+    0,
+    1.6,
+    0
+   ],
+   "s": [
+    3,
+    3.2,
+    0.25
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "foyer",
+    "len": 3
+   }
+  },
+  {
+   "p": [
+    2.75,
+    2.8,
+    0
+   ],
+   "s": [
+    2.5,
+    0.8000000000000003,
+    0.25
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "foyer",
+    "len": 2.5
+   }
+  },
+  {
+   "p": [
+    8,
+    1.6,
+    0
+   ],
+   "s": [
+    8,
+    3.2,
+    0.25
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "foyer",
+    "len": 8
+   }
+  },
+  {
+   "p": [
+    0,
+    1.6,
+    -9.5
+   ],
+   "s": [
+    0.25,
+    3.2,
+    5
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "living",
+    "len": 5
+   }
+  },
+  {
+   "p": [
+    0,
+    2.8,
+    -5.75
+   ],
+   "s": [
+    0.25,
+    0.8000000000000003,
+    2.5
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "living",
+    "len": 2.5
+   }
+  },
+  {
+   "p": [
+    0,
+    1.6,
+    -2.25
+   ],
+   "s": [
+    0.25,
+    3.2,
+    4.5
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "living",
+    "len": 4.5
+   }
+  },
+  {
+   "p": [
+    -5,
+    1.6,
+    1.5
+   ],
+   "s": [
+    0.25,
+    3.2,
+    3
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "study",
+    "len": 3
+   }
+  },
+  {
+   "p": [
+    -5,
+    2.8,
+    4.25
+   ],
+   "s": [
+    0.25,
+    0.8000000000000003,
+    2.5
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "study",
+    "len": 2.5
+   }
+  },
+  {
+   "p": [
+    -5,
+    1.6,
+    6.75
+   ],
+   "s": [
+    0.25,
+    3.2,
+    2.5
+   ],
+   "mat": "wall",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "wall": {
+    "room": "study",
+    "len": 2.5
+   }
+  },
+  {
+   "p": [
+    -1.9,
+    1.375,
+    9.25
+   ],
+   "s": [
+    0.22,
+    2.75,
+    0.22
+   ],
+   "mat": "column",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    1.9,
+    1.375,
+    9.25
+   ],
+   "s": [
+    0.22,
+    2.75,
+    0.22
+   ],
+   "mat": "column",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    0,
+    2.81,
+    8.8
+   ],
+   "s": [
+    4.6,
+    0.12,
+    1.36
+   ],
+   "mat": "porch-roof",
+   "rotX": 0,
+   "collide": false,
+   "cast": true
+  },
+  {
+   "p": [
+    -11.7,
+    1.3,
+    1.5
+   ],
+   "s": [
+    0.4,
+    2.6,
+    1.6
+   ],
+   "mat": "shelf",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    -11.7,
+    1.3,
+    3.6
+   ],
+   "s": [
+    0.4,
+    2.6,
+    1.6
+   ],
+   "mat": "shelf",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    -11.7,
+    1.3,
+    6.6
+   ],
+   "s": [
+    0.4,
+    2.6,
+    1.6
+   ],
+   "mat": "shelf",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    -8.5,
+    0.75,
+    1.2
+   ],
+   "s": [
+    2.2,
+    0.08,
+    1
+   ],
+   "mat": "shelf",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "desk": true
+  },
+  {
+   "p": [
+    -9.5,
+    0.355,
+    0.8
+   ],
+   "s": [
+    0.08,
+    0.71,
+    0.08
+   ],
+   "mat": "shelf",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "deskLeg": true
+  },
+  {
+   "p": [
+    -7.5,
+    0.355,
+    0.8
+   ],
+   "s": [
+    0.08,
+    0.71,
+    0.08
+   ],
+   "mat": "shelf",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "deskLeg": true
+  },
+  {
+   "p": [
+    -9.5,
+    0.355,
+    1.6
+   ],
+   "s": [
+    0.08,
+    0.71,
+    0.08
+   ],
+   "mat": "shelf",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "deskLeg": true
+  },
+  {
+   "p": [
+    -7.5,
+    0.355,
+    1.6
+   ],
+   "s": [
+    0.08,
+    0.71,
+    0.08
+   ],
+   "mat": "shelf",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "deskLeg": true
+  },
+  {
+   "p": [
+    -6,
+    0.7,
+    -11.6
+   ],
+   "s": [
+    2.6,
+    1.4,
+    0.6
+   ],
+   "mat": "brick",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "fireplace": true
+  },
+  {
+   "p": [
+    -6,
+    1.45,
+    -11.55
+   ],
+   "s": [
+    3,
+    0.1,
+    0.75
+   ],
+   "mat": "shelf",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "mantel": true
+  },
+  {
+   "p": [
+    6,
+    0.45,
+    -11.6
+   ],
+   "s": [
+    3,
+    0.9,
+    0.5
+   ],
+   "mat": "shelf",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "sideboard": true
+  },
+  {
+   "p": [
+    -13.2,
+    1,
+    17
+   ],
+   "s": [
+    1.2,
+    2,
+    18
+   ],
+   "mat": "hedge",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    13.2,
+    1,
+    17
+   ],
+   "s": [
+    1.2,
+    2,
+    18
+   ],
+   "mat": "hedge",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    0,
+    1,
+    26.5
+   ],
+   "s": [
+    27.6,
+    2,
+    1.2
+   ],
+   "mat": "hedge",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    0,
+    0.75,
+    18
+   ],
+   "s": [
+    2.9,
+    0.3,
+    6
+   ],
+   "mat": "truck-bed",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    -1.5,
+    2.15,
+    18
+   ],
+   "s": [
+    0.1,
+    2.5,
+    6
+   ],
+   "mat": "truck-side",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    1.5,
+    2.15,
+    18
+   ],
+   "s": [
+    0.1,
+    2.5,
+    6
+   ],
+   "mat": "truck-side",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    0,
+    2.15,
+    21.05
+   ],
+   "s": [
+    3.1,
+    2.5,
+    0.1
+   ],
+   "mat": "truck-white",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    0,
+    3.4499999999999997,
+    18
+   ],
+   "s": [
+    3.1,
+    0.1,
+    6.2
+   ],
+   "mat": "truck-white",
+   "rotX": 0,
+   "collide": true,
+   "cast": true
+  },
+  {
+   "p": [
+    0,
+    1.55,
+    22.4
+   ],
+   "s": [
+    2.9,
+    2.1,
+    2.4
+   ],
+   "mat": "truck-red",
+   "rotX": 0,
+   "collide": true,
+   "cast": true,
+   "cab": true
+  },
+  {
+   "p": [
+    0,
+    2,
+    23.62
+   ],
+   "s": [
+    2.6,
+    0.9,
+    0.05
+   ],
+   "mat": "glass",
+   "rotX": 0,
+   "collide": false,
+   "cast": true
+  },
+  {
+   "p": [
+    0,
+    0.40210868573894243,
+    13.514367394278317
+   ],
+   "s": [
+    2.4,
+    0.1,
+    3.132091952673165
+   ],
+   "mat": "ramp",
+   "rotX": -0.2914567944778671,
+   "collide": true,
+   "cast": true
+  }
+ ],
+ "walls": [
+  {
+   "axis": "x",
+   "at": -12,
+   "from": -12.125,
+   "to": 12.125,
+   "gaps": [],
+   "rooms": [
+    "outdoors",
+    "living"
+   ],
+   "outer": 0
+  },
+  {
+   "axis": "z",
+   "at": -12,
+   "from": -12,
+   "to": 8,
+   "gaps": [],
+   "rooms": [
+    "outdoors",
+    "study"
+   ],
+   "outer": 0
+  },
+  {
+   "axis": "z",
+   "at": 12,
+   "from": -12,
+   "to": 8,
+   "gaps": [],
+   "rooms": [
+    "foyer",
+    "outdoors"
+   ],
+   "outer": 0
+  },
+  {
+   "axis": "x",
+   "at": 8,
+   "from": -12.125,
+   "to": 12.125,
+   "gaps": [
+    [
+     -1,
+     1
+    ]
+   ],
+   "rooms": [
+    "foyer",
+    "outdoors"
+   ],
+   "outer": 1
+  },
+  {
+   "axis": "x",
+   "at": 0,
+   "from": -12,
+   "to": 12,
+   "gaps": [
+    [
+     -4,
+     -1.5
+    ],
+    [
+     1.5,
+     4
+    ]
+   ],
+   "rooms": [
+    "living",
+    "foyer"
+   ],
+   "outer": 0
+  },
+  {
+   "axis": "z",
+   "at": 0,
+   "from": -12,
+   "to": 0,
+   "gaps": [
+    [
+     -7,
+     -4.5
+    ]
+   ],
+   "rooms": [
+    "living",
+    "dining"
+   ],
+   "outer": 0
+  },
+  {
+   "axis": "z",
+   "at": -5,
+   "from": 0,
+   "to": 8,
+   "gaps": [
+    [
+     3,
+     5.5
+    ]
+   ],
+   "rooms": [
+    "study",
+    "foyer"
+   ],
+   "outer": 0
+  }
+ ],
+ "doorways": [
+  {
+   "axis": "x",
+   "at": 8,
+   "a": -1,
+   "b": 1
+  },
+  {
+   "axis": "x",
+   "at": 0,
+   "a": -4,
+   "b": -1.5
+  },
+  {
+   "axis": "x",
+   "at": 0,
+   "a": 1.5,
+   "b": 4
+  },
+  {
+   "axis": "z",
+   "at": 0,
+   "a": -7,
+   "b": -4.5
+  },
+  {
+   "axis": "z",
+   "at": -5,
+   "a": 3,
+   "b": 5.5
+  }
+ ],
+ "lamps": [
+  {
+   "p": [
+    -8.5,
+    2.7,
+    4.5
+   ],
+   "color": "#cfe6ff",
+   "intensity": 18,
+   "distance": 11,
+   "bake": "main",
+   "fixture": "pendant"
+  },
+  {
+   "p": [
+    3.5,
+    2.85,
+    4
+   ],
+   "color": "#ffd9a0",
+   "intensity": 30,
+   "distance": 14,
+   "bake": "main",
+   "fixture": "chandelier"
+  },
+  {
+   "p": [
+    -6,
+    0.9,
+    -10.9
+   ],
+   "color": "#ff8a3a",
+   "intensity": 14,
+   "distance": 9,
+   "flicker": 0.35,
+   "bake": "main",
+   "fixture": "fire"
+  },
+  {
+   "p": [
+    -5,
+    2.85,
+    -5
+   ],
+   "color": "#ffd0a0",
+   "intensity": 10,
+   "distance": 11,
+   "bake": "main",
+   "fixture": "pendant"
+  },
+  {
+   "p": [
+    6,
+    2.85,
+    -6
+   ],
+   "color": "#ffe2b0",
+   "intensity": 24,
+   "distance": 12,
+   "flicker": 1,
+   "bake": "flicker",
+   "fixture": "pendant"
+  },
+  {
+   "p": [
+    1.6,
+    2.6,
+    8.45
+   ],
+   "color": "#ffc070",
+   "intensity": 8,
+   "distance": 8,
+   "flicker": 0.15,
+   "bake": "main",
+   "fixture": "sconce"
+  },
+  {
+   "p": [
+    0,
+    3.1999999999999997,
+    18
+   ],
+   "color": "#fff0d0",
+   "intensity": 14,
+   "distance": 7,
+   "bake": "main",
+   "fixture": "truck"
+  }
+ ],
+ "roomColors": {
+  "foyer": "#c6d2bf",
+  "study": "#b8c7d9",
+  "living": "#e3b7a8",
+  "dining": "#e6d9a4",
+  "outer": "#cfc4ad"
+ },
+ "moon": {
+  "dir": [
+   -20,
+   30,
+   40
+  ],
+  "target": [
+   0,
+   0,
+   10
+  ],
+  "color": "#a9bbff",
+  "intensity": 2
+ },
+ "sky": {
+  "top": "#4a5a85",
+  "bottom": "#1a140e",
+  "intensity": 1
+ },
+ "pedestal": {
+  "p": [
+   3,
+   0,
+   5
+  ],
+  "r": 0.25,
+  "h": 1
+ },
+ "shelves": [
+  [
+   -11.7,
+   1.5
+  ],
+  [
+   -11.7,
+   3.6
+  ],
+  [
+   -11.7,
+   6.6
+  ]
+ ],
+ "wheels": [
+  [
+   -1.45,
+   0.45,
+   16
+  ],
+  [
+   1.45,
+   0.45,
+   16
+  ],
+  [
+   -1.45,
+   0.45,
+   20
+  ],
+  [
+   1.45,
+   0.45,
+   20
+  ],
+  [
+   -1.45,
+   0.45,
+   22.6
+  ],
+  [
+   1.45,
+   0.45,
+   22.6
+  ]
+ ],
+ "door": {
+  "hinge": [
+   -0.97,
+   1.2,
+   8
+  ],
+  "center": [
+   0,
+   1.2,
+   8
+  ],
+  "size": [
+   1.9,
+   2.34,
+   0.08
+  ]
+ },
+ "truckZone": {
+  "min": [
+   -1.45,
+   0.8,
+   15
+  ],
+  "max": [
+   1.45,
+   3.4,
+   21
+  ]
+ },
+ "playerSpawn": [
+  0,
+  0.01,
+  10.6
+ ],
+ "spawns": [
+  {
+   "type": "vase",
+   "pos": [
+    3,
+    1,
+    5
+   ]
+  },
+  {
+   "type": "armchair",
+   "pos": [
+    8,
+    0,
+    6.5
+   ],
+   "rotY": 3.141592653589793
+  },
+  {
+   "type": "clock",
+   "pos": [
+    11.5,
+    0,
+    1.5
+   ],
+   "rotY": -1.5707963267948966
+  },
+  {
+   "type": "plates",
+   "pos": [
+    -3,
+    0,
+    6.5
+   ],
+   "rotY": 0.3
+  },
+  {
+   "type": "globe",
+   "pos": [
+    -9.1,
+    0.79,
+    1.2
+   ]
+  },
+  {
+   "type": "tv",
+   "pos": [
+    -8.2,
+    0.79,
+    1.15
+   ],
+   "rotY": 0.2
+  },
+  {
+   "type": "lava",
+   "pos": [
+    -7.6,
+    0.79,
+    1.3
+   ]
+  },
+  {
+   "type": "portrait",
+   "pos": [
+    -6,
+    0,
+    7.5
+   ],
+   "rotY": 3.141592653589793
+  },
+  {
+   "type": "duck",
+   "pos": [
+    -10.3,
+    0,
+    4.6
+   ],
+   "rotY": 1.5707963267948966
+  },
+  {
+   "type": "piano",
+   "pos": [
+    -9.5,
+    0,
+    -11.4
+   ]
+  },
+  {
+   "type": "armchair",
+   "pos": [
+    -4,
+    0,
+    -4
+   ],
+   "rotY": 2.4
+  },
+  {
+   "type": "vase",
+   "pos": [
+    -6.9,
+    1.5,
+    -11.6
+   ]
+  },
+  {
+   "type": "lava",
+   "pos": [
+    -5.1,
+    1.5,
+    -11.6
+   ]
+  },
+  {
+   "type": "portrait",
+   "pos": [
+    -2,
+    0,
+    -11.75
+   ]
+  },
+  {
+   "type": "table",
+   "pos": [
+    6,
+    0,
+    -6
+   ]
+  },
+  {
+   "type": "vase",
+   "pos": [
+    5.2,
+    0.8,
+    -6
+   ]
+  },
+  {
+   "type": "teapot",
+   "pos": [
+    6.8,
+    0.8,
+    -5.8
+   ]
+  },
+  {
+   "type": "fishbowl",
+   "pos": [
+    6.2,
+    0.8,
+    -6.3
+   ]
+  },
+  {
+   "type": "teapot",
+   "pos": [
+    5,
+    0.9,
+    -11.6
+   ]
+  },
+  {
+   "type": "plates",
+   "pos": [
+    10.5,
+    0,
+    -10.5
+   ],
+   "rotY": -0.4
+  }
+ ]
+}

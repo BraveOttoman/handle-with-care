@@ -116,6 +116,22 @@ export function buildTextures() {
     g.fillText('HERE', s / 2, s / 2 + 30);
   }, { repeat: false });
 
+  textures.flame = canvasTex(128, (g, s) => {
+    g.clearRect(0, 0, s, s);
+    for (const [cx, w, h, col] of [[0.5, 0.42, 0.95, 'rgba(255,90,20,0.9)'], [0.32, 0.22, 0.6, 'rgba(255,120,30,0.8)'],
+      [0.68, 0.22, 0.65, 'rgba(255,120,30,0.8)'], [0.5, 0.22, 0.55, 'rgba(255,220,120,0.95)']]) {
+      const grd = g.createRadialGradient(cx * s, s * 0.95, 2, cx * s, s * (1 - h * 0.5), s * h * 0.6);
+      grd.addColorStop(0, col);
+      grd.addColorStop(1, 'rgba(255,60,0,0)');
+      g.fillStyle = grd;
+      g.beginPath();
+      g.moveTo((cx - w / 2) * s, s);
+      g.quadraticCurveTo((cx - w / 2) * s, s * (1 - h * 0.5), cx * s, s * (1 - h));
+      g.quadraticCurveTo((cx + w / 2) * s, s * (1 - h * 0.5), (cx + w / 2) * s, s);
+      g.fill();
+    }
+  }, { repeat: false });
+
   textures.portrait = canvasTex(128, (g, s) => {
     g.fillStyle = '#2b2236';
     g.fillRect(0, 0, s, s);

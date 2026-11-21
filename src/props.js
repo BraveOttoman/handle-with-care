@@ -172,6 +172,10 @@ function materialFor(part) {
     m.emissive.set(part.emissive);
     m.emissiveIntensity = 0.8;
   }
+  return rememberBase(m);
+}
+
+function rememberBase(m) {
   m.userData.baseEmissive = m.emissive.clone();
   m.userData.baseIntensity = m.emissiveIntensity;
   m.userData.baseColor = m.color.clone();
@@ -232,9 +236,21 @@ export class PropManager {
   spawn(type, pos, rotY = 0) {
     const def = CATALOG[type];
     const R = this.R;
-    const mesh = new THREE.Group();
+    const model = this.models?.get(type);
+    const mesh = model ? model.clone(true) : new THREE.Group();
     const materials = [];
-    for (const part of def.parts) {
+    if (model) {
+      mesh.position.set(0, 0, 0);
+      mesh.quaternion.identity();
+      mesh.traverse((o) => {
+        if (!o.isMesh) return;
+        o.material = rememberBase(o.material.clone()); // each item scuffs and flashes on its own
+        o.material.envMap = this.envMap ?? null;
+        o.material.envMapIntensity = 0.6;
+        materials.push(o.material);
+      });
+    }
+    for (const part of model ? [] : def.parts) {
       const mat = materialFor(part);
       materials.push(mat);
       const m = new THREE.Mesh(geometryFor(part), mat);
